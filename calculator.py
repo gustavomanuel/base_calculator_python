@@ -2,6 +2,7 @@ position = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D"
             "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 
+# this checks whether the numbers are acceptable in the choosen base
 def is_not_compatible(x, b):
     for i in x:
         if i not in position[:b]:
@@ -9,6 +10,7 @@ def is_not_compatible(x, b):
     return False
 
 
+# converts a number which might include letters to an array of number strings
 def to_array_of_numbers(x):
     array = []
     for i in x:
@@ -16,6 +18,7 @@ def to_array_of_numbers(x):
     return array
 
 
+# converts the inserted number to base 10
 def to_ten(x, b):
     count = total = 0
     x = to_array_of_numbers(x[::-1])
@@ -25,6 +28,7 @@ def to_ten(x, b):
     return total
 
 
+# converts the prevously changed to base 10 number to the desired base
 def to_desired_base(decimal, b):
     array = []
     while decimal > 0:
